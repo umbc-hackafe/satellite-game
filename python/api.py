@@ -21,7 +21,7 @@ class API:
 
     def register_client(self, client):
         """Registers a client (websocket?) to receive updates. It can be anything with a send() method."""
-        
+
         self.clients.add(client)
 
     def register_item(self, item):

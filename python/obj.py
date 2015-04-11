@@ -3,7 +3,7 @@ import uuid
 class GameObj:
     def __init__(self, objstore):
         self._uuid = uuid.uuid4()
-        self.new = True
+        self._changed = True
         print(self._uuid)
         objstore.register(self)
     def __hash__(self):
@@ -12,8 +12,8 @@ class GameObj:
         return int(self._uuid) == int(obj._uuid)
 
     def changed(self):
-        if self.new:
-            self.new = False
+        if self._changed:
+            self._changed = False
             return True
         else:
             return False
