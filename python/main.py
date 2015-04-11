@@ -23,8 +23,10 @@ def main(args):
         timediff = curtime - newtime
         curtime = newtime
 
-        changed = store.filter(objfunc="changed")
-        if changed:
+        changed = list(store.changed())
+        if len(changed):
+            # XXX: have to use a hack to get the length; it's an iterator, not a
+            # list, so we can just sum the elements.
             print("Changed: %d" % len(changed))
 
         if random.random() < 0.000001:
