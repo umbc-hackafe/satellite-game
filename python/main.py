@@ -23,7 +23,7 @@ def main(args):
         timediff = curtime - newtime
         curtime = newtime
 
-        changed = store.changed()
+        changed = store.filter(objfunc="changed")
         if changed:
             print("Changed: %d" % len(changed))
 
