@@ -4,6 +4,8 @@ var canvas32;
 
 var game;
 
+const G = 10;
+
 function update(timestamp) {
     requestAnimationFrame(update);
 

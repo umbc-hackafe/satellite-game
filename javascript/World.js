@@ -1,12 +1,12 @@
 class World {
     constructor(args) {
         // REQUIRES:
-        // 'id'
-        // 'radius'
-        // 'mass'
+        // 'id': int
+        // 'radius': float
+        // 'mass': float
         this.id = args.id;
         this.radius = args.radius;
-        this.masss = args.mass;
+        this.mass = args.mass;
         
         this.geom = new THREE.IcosahedronGeometry(1, 3);
         this.material = new THREE.MeshBasicMaterial({

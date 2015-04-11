@@ -7,15 +7,32 @@ class Game {
             canvas: canvas3d.get(0),
         });
 
-        this.camera = new OrbitCamera(8, 100);
-        this.camera.add_to(this.scene);
-
         this.world = new World({
             id: 0,
             radius: 4,
-            mass: 1,
+            mass: 100,
         });
         this.world.add_to(this.scene);
+
+        this.camera = new OrbitCamera(this.world.radius * 2, this.world.radius * 10);
+        this.camera.add_to(this.scene);
+
+        var sat = new Satellite({
+            id: 1,
+            position: {
+                x: 0,
+                y: 0,
+                z: this.world.radius * 1.5,
+            },
+            velocity: {
+                x: 7.5,
+                y: 7.5,
+                z: 0,
+            },
+            mass: 1,
+        });
+
+        sat.add_to(this.scene);
 
         this.resize();
     }

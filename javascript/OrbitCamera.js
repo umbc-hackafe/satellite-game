@@ -3,7 +3,7 @@ class OrbitCamera {
         this.min_distance = min_distance;
         this.max_distance = max_distance;
 
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1e9);
         this.camera.userData = this;
         this.camera.matrixAutoUpdate = false;
 
