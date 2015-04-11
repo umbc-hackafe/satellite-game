@@ -1,5 +1,13 @@
 class World {
-    constructor() {
+    constructor(args) {
+        // REQUIRES:
+        // 'id'
+        // 'radius'
+        // 'mass'
+        this.id = args.id;
+        this.radius = args.radius;
+        this.masss = args.mass;
+        
         this.geom = new THREE.IcosahedronGeometry(1, 3);
         this.material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
@@ -15,9 +23,7 @@ class World {
         this.wire_mesh.material.transparent = true;
         this.wire_mesh.material.blending = THREE.AdditiveBlending;
 
-        this.sphere = new THREE.Sphere(new THREE.Vector3(0,0,0), 4);
-
-        this.base_mesh.scale.set(this.sphere.radius, this.sphere.radius, this.sphere.radius);
+        this.base_mesh.scale.set(this.radius, this.radius, this.radius);
     }
 
     add_to(other) {

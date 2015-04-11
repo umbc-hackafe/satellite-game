@@ -10,7 +10,11 @@ class Game {
         this.camera = new OrbitCamera(8, 100);
         this.camera.add_to(this.scene);
 
-        this.world = new World();
+        this.world = new World({
+            id: 0,
+            radius: 4,
+            mass: 1,
+        });
         this.world.add_to(this.scene);
 
         this.resize();
