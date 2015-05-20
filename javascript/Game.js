@@ -12,9 +12,9 @@ class Game {
             radius: 4,
             mass: 100,
         });
-        this.world.add_to(this.scene);
+        //this.world.add_to(this.scene);
 
-        this.camera = new OrbitCamera(this.world.radius * 2, this.world.radius * 10);
+        this.camera = new OrbitCamera(this.world.radius * 3, this.world.radius * 10);
         this.camera.add_to(this.scene);
 
         var sat = new Satellite({
@@ -25,8 +25,8 @@ class Game {
                 z: this.world.radius * 1.5,
             },
             velocity: {
-                x: 7.5,
-                y: 7.5,
+                x: 2,//7.5,
+                y: 2,//7.5,
                 z: 0,
             },
             mass: 1,
